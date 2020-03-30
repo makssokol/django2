@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+  <div class="mainpage">
+  <div class="inc-cat-menu">
+    {% include 'mainapp/includes/inc_categories_menu.html' %}
+  </div>
+    <div class="hot-product">
+    <h3 class="red">HOT DEAL!</h3>
+    <h3 class="big-bold">{{ hot_product.name }}</h3>
+    <img src="{{ media_url }}{{ hot_product.image }}" alt="{{ hot_product.artist }}">
+    <p>Category: {{ hot_product.category.name }}</p>
+    <p>Price: {{ hot_product.price|stringformat:"d"|intcomma }} $</p>
+          <a href="{% url 'basket:add' hot_product.pk %}">
+            <button class="button-basket">
+              Add to basket
+            </button>
+        </a>
+    </div>
+  </div>
+
+  
+{% endblock content %}

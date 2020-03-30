@@ -1,0 +1,21 @@
+{% extends 'mainapp/base.html' %}
+{% load static mail_to %}
+
+{% block content %}
+  <div class="mainpage">
+    <h1>Today is: {{ visit_date|date:"l, j F, Y" }}</h1><br>
+
+    <h4>You can contact us by following e-mails:
+    <li>
+    {% for location in locations %}
+    <ol>
+    {{ location.email|mail_to }}
+    </ol>
+    {% endfor %}
+    </ul>
+    </h4>
+    <br>
+    <h5>Our site is under development. Sorry for your inconvenience.</h5>
+
+</div>
+  {% endblock content %}

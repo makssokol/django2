@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %} 
+        {{ title|title }} 
+      {% endblock title %}
+    </title>
+    {% block css %}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}" />
+    {% endblock css %}
+
+    {% block js %}
+    {% endblock js %}
+  </head>
+  <body>
+    <div class="container">
+        <div class="login">
+            <div class="h2 text-center head">
+                Login to the system
+            </div>
+
+            {% block content %}
+            {% endblock content %}
+        </div>
+    <div class="clr"></div>
+    {% block footer %}
+    <div class="footer">
+      <div class="networks">
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-rss"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-vk"></i></a>
+          </li>
+        </ul>
+      </div>
+      <small>Все права защищены &copy; 2020</small>
+      
+    </div>
+    {% endblock footer %}
+  </div>
+  </body>
+</html>

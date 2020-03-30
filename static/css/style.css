@@ -1,0 +1,709 @@
+body {
+    background-color: #f7e5e4;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    max-width: 1440px;
+    min-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100%;
+}
+
+.page {
+    height: 725px;   
+}
+
+  .header1 {
+    content: "";
+    display: block;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: url(/static/img/dance-henri-matisse.png) no-repeat;
+    background-size: cover;
+  }
+ 
+
+.header2 {
+    position: relative;
+    display: inline-block;
+    clear: both;
+
+}
+
+.logo {
+    margin-left: 40px;
+    float: left;
+}
+
+.phone {
+    color: #f5f6ce;
+    margin-left: 520px;
+    margin-top: 15px;
+    float: left;
+    position: absolute
+}
+
+.mail {
+    color: #f5f6ce;
+    margin-left: 1200px;
+    margin-top: 15px;
+    position: absolute
+}
+
+.header2 ul {
+    list-style-type: none;
+    margin-left: 350px;
+    float: left;
+}
+
+.header2 ul li {
+    display: inline-block;
+    width: 130px;
+}
+
+.header2 ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer {
+    height: 100px;
+    background-color: #ccc;
+    margin-top: -100px;
+    max-width: 1440px;
+    margin: -100px auto 0;
+    text-align: right;
+    padding-top: 40px;
+    padding-right: 40px;
+    font-size: 20px;
+}
+
+.clr {
+    height: 100px;
+}
+
+.about {
+    text-align: center;
+}
+
+.about h1 {
+    color: #a80606;
+    font-size: 70px;
+}
+
+.mainpage-index {
+    background-image: url(/static/img/main_back.jpg);
+    height: 650px;
+    clear: both;
+}
+
+.mainpage {
+
+    height: 650px;
+    clear: both;
+}
+
+.networks {
+    float: left;
+}
+
+.networks ul {
+    list-style-type: none;
+    font-size: 30px;
+    margin-block-start: 0px;
+}
+
+.networks ul li {
+    display: inline-block;
+    width: 50px;
+}
+
+.networks ul li a i {
+    color: white;
+}
+
+.block {
+    float: left;
+    display: inline-flex;
+}
+
+.block a {
+    margin-left: 30px;
+}
+
+.active{
+    text-decoration: underline;
+}
+
+.login {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 25px;
+    overflow: hidden;
+    width: 28em;
+    min-width: 500px;
+    margin: 100px auto;
+
+    position: relative;
+    display: block;
+}
+
+.login .head {
+    margin: 15px auto;
+}
+
+.login .form-control[type="submit"] {
+    margin: 10px auto;
+}
+
+.login button {
+    border: 1px solid #eaeaea;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.login button.last {
+    margin-bottom: 25px;
+}
+
+.login button a,
+.login button a:hover {
+    border: 1px solid #eaeaea;
+    color: #555;
+    text-decoration: none;
+}
+
+.login form {
+    margin-bottom: 10px;
+}
+
+.login div.user_avatar {
+    position: fixed;
+    left: 175px;
+    top: 200px;
+}
+
+.user_avatar img {
+    width: 300px;
+    border-radius: 25px;
+}
+
+.block > a > img {
+    width: 225px;
+}
+
+.block {
+    float: left;
+    display: block;
+    border: 1px solid blue;
+    margin-left: 20px;
+}
+
+.basket span {
+    display: block;
+    margin-left: 30px;
+    width: 150px;
+}
+
+.hot-product {
+    width: 220px;
+    height: 450px;
+    border: 1px solid blue;
+    top: 210px;
+    left: 400px;
+    position: absolute;
+}
+
+
+.text-hotDeal {
+    width: 460px;
+    margin-top: 287px;
+    position: absolute;
+}
+
+.red {
+    text-transform: uppercase;
+    color: #e53935;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 17px;
+    margin-bottom: 22px;
+}
+
+.inc-cat-menu {
+    float: left;
+    display: block;
+    border: 1px solid blue;
+}
+
+.basket_container {
+    margin: 25px auto;
+    width: 700px;
+}
+
+.basket-list input[type="number"] {
+    width: 3em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.basket-list span.category-name {
+    margin-left: 2em;
+    width: 5em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.basket-list span.product-name {
+    margin-left: 1em;
+    width: 8em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.basket-list span.product-price {
+    margin-left: 1em;
+    width: 7em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.basket-list span.product-cost {
+    margin-left: 1em;
+    width: 7em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.basket-list .basket-record {
+    position: relative;
+    display: block;
+    height: 240px;
+    float: none;
+}
+
+.basket_container .head {
+    margin: 25px auto;
+}
+
+.basket_container button {
+    margin-left: 25px;
+    width: 150px;
+    display: block;
+    float: left;
+}
+
+.basket_container button a {
+    text-decoration: none;
+    color: #555;
+}
+
+.basket_container img {
+    display: block;
+    float: left;
+    width: 150px;
+    border-radius: 25px;
+}
+
+.basket_container input[type="submit"] {
+    width: 150px;
+    display: block;
+    float: left;
+    margin-bottom: 25px;
+}
+
+.basket_container .basket-summary {
+    display: block;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.basket-record input[type="number"] {
+    width: 3em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.product_read {
+    margin: 0 auto;
+    width: 1000px;
+    height: 600px;
+}
+
+.product_read img {
+    display: block;
+    float: left;
+    margin-top: 25px;
+    border-radius: 25px;
+}
+
+.product_read .product_name {
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+}
+
+.product_read .summary {
+    display: block;
+    float: left;
+    margin-left: 35px;
+    margin-top: 30px;
+    width: 150px;
+}
+
+.product_read .product_desc {
+    display: block;
+    float: left;
+    margin-left: 35px;
+    margin-top: 45px;
+    width: 400px;
+}
+
+.product_read strong {
+    font-size: 150%;
+    margin-left: 15px;
+}
+
+.product_read button {
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    height: 30px;
+    margin: 0px auto;
+    width: 135px;
+    padding: 0 15px;
+}
+
+.product_read a {
+    color: #555;
+    text-decoration: none;
+}
+
+
+.product_delete {
+    margin: 50px auto;
+    width: 600px;
+    font-size: 150%;
+}
+
+.product_delete .btn {
+    display: block;
+    float: left;
+    margin: 25px;
+    width: 150px;
+    color: #111;
+}
+
+.product_delete a {
+    color: #111;
+    text-decoration: none;
+}
+
+
+.admin_container .menu span {
+    margin-left: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #111;
+}
+
+.products_list {
+    margin-left: 250px;
+}
+
+.products_list .new_product {
+    margin-left: 150px;
+}
+
+.products_list button {
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    height: 30px;
+    margin: 5px auto;
+    width: 145px;
+    padding: 0 15px;
+}
+
+.products_list a {
+    color: #555;
+    text-decoration: none;
+}
+
+.product_record {
+    height: 125px;
+    margin: 15px auto;
+    position: relative;
+}
+
+.product_record.not_active {
+    opacity: 0.5;
+}
+
+.product_record .product_name {
+    display: block;
+    float: left;
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 250px;
+    font-size: 150%;
+}
+
+.product_record .product_actions {
+    display: block;
+    float: left;
+    margin-top: 0px;
+    margin-left: 25px;
+    width: 135px;
+}
+
+.product_record .product_desc {
+    display: block;
+    float: left;
+    margin-top: 15px;
+    margin-left: 25px;
+    width: 350px;
+}
+
+.product_record .summary {
+    display: block;
+    float: left;
+    margin-top: 15px;
+    margin-left: 25px;
+    width: 100px;
+}
+
+.product_record img {
+    display: block;
+    float: left;
+    height: 125px;
+    width: 125px;
+    border-radius: 25px;
+}
+
+
+.new_category_form {
+    margin: 0 auto;
+    width: 600px;
+}
+
+
+.category_delete {
+    margin: 50px auto;
+    width: 600px;
+    font-size: 150%;
+}
+
+.category_delete .btn {
+    display: block;
+    float: left;
+    margin: 25px;
+    width: 150px;
+    color: #111;
+}
+
+.category_delete a {
+    color: #111;
+    text-decoration: none;
+}
+
+.categories_list {
+    margin-left: 150px;
+}
+
+.categories_list .new_category {
+    margin-left: 200px;
+}
+
+.categories_list button {
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    height: 30px;
+    margin: 5px auto;
+    padding: 0 15px;
+}
+
+.categories_list a {
+    color: #555;
+    text-decoration: none;
+}
+
+.category_record {
+    height: 125px;
+    margin: 15px auto;
+    position: relative;
+}
+
+.category_record.not_active {
+    opacity: 0.5;
+}
+
+.categories_list .category_name {
+    display: block;
+    float: left;
+    margin-top: 15px;
+    margin-left: 25px;
+    width: 150px;
+    font-size: 150%;
+}
+
+.category_record .category_actions {
+    display: block;
+    float: left;
+    margin-top: 0px;
+    margin-left: 25px;
+    width: 175px;
+}
+
+.category_record .category_desc {
+    display: block;
+    float: left;
+    margin-top: 0px;
+    margin-left: 25px;
+    width: 300px;
+}
+
+
+.user_delete {
+    margin: 50px auto;
+    width: 600px;
+    font-size: 150%;
+}
+
+.user_delete .btn {
+    display: block;
+    float: left;
+    margin: 25px;
+    width: 150px;
+    color: #111;
+}
+
+.user_delete a {
+    color: #111;
+    text-decoration: none;
+}
+
+.users_list {
+    margin-left: 150px;
+}
+
+.users_list a {
+    color: #555;
+    text-decoration: none;
+}
+
+.users_list .new_user {
+    margin-left: 190px;
+}
+
+.users_list button {
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    height: 30px;
+    margin: 5px auto;
+    padding: 0 15px;
+}
+
+.user_record {
+    height: 125px;
+    margin: 15px auto;
+    position: relative;
+}
+
+.user_record.not_active {
+    opacity: 0.5;
+}
+
+.user_record img {
+    display: block;
+    float: left;
+    height: 125px;
+    border-radius: 25px;
+}
+
+.user_record .user_name {
+    display: block;
+    float: left;
+    margin-top: 15px;
+    margin-left: 25px;
+    width: 175px;
+}
+
+.user_record .user_name a {
+    color: #555;
+}
+
+.user_record .user_name p {
+    /*font-weight: bold;*/
+    margin: 10px auto;
+}
+
+.user_record .user_email {
+    display: block;
+    float: left;
+    margin-top: 40px;
+    margin-left: 25px;
+    width: 175px;
+}
+
+.user_record .user_age {
+    display: block;
+    float: left;
+    margin-top: 40px;
+    margin-left: 25px;
+    width: 45px;
+}
+
+.user_record .user_role {
+    display: block;
+    float: left;
+    margin-top: 15px;
+    margin-left: 25px;
+    width: 125px;
+}
+
+.user_record .user_lastlogin {
+    display: block;
+    float: left;
+    margin-top: 40px;
+    margin-left: 25px;
+    width: 175px;
+}
+
+
+.admin_container .h2 {
+    margin-top: 10px;
+}
+
+.admin_menu {
+    display: block;
+    left: 15px;
+    top: 20px;
+    height: 40px;
+    width: 100%;
+}
+
+.admin_menu ul.menu {
+    display: block;
+    float: none;
+    width: 550px;
+    height: 50px;
+    margin: auto;
+    color: #555;
+}

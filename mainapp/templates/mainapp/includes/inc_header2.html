@@ -1,0 +1,38 @@
+{% load humanize %}
+
+<div class="header2">
+    <ul>
+      <li><a href="{% url 'main' %}" class="{% if request.resolver_match.url_name == 'main' %}active{% endif %}">Home</a></li>
+      <li><a href="{% url 'products:catalog' %}" class="{% if request.resolver_match.url_name == 'catalog' %}active{% endif %}">Catalog</a></li>
+      <li><a href="{% url 'products:products' pk=0 %}" class="{% if request.resolver_match.url_name == 'products' %}active{% endif %}">Art Objects</a></li>
+      <li><a href="{% url 'products:contacts' %}" class="{% if request.resolver_match.url_name == 'contacts' %}active{% endif %}">Contacts</a></li>
+      
+      {% if user.is_authenticated %}
+      <li>
+        <a href="{% url 'auth:edit' %}">
+          {{ user.first_name|default:'User' }}
+        </a>
+      </li>
+      {% endif %}
+      {% if user.is_superuser %}
+        <li>
+          <a href="{% url 'admin:users' %}">Admin site</a>
+        </li>
+      {% endif %}
+      <li>
+        {% if user.is_authenticated %}
+        <a href="{% url 'auth:logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'auth:login' %}">Login</a>
+        {% endif %}
+        </li>
+        <li>
+          <a href="{% url 'basket:view' %}" class="basket"><i class="fas fa-shopping-basket"></i>
+          <span>
+            {% if basket %} 
+              {{ basket.0.total_price|stringformat:"d"|intcomma }} $ ({{ basket.0.total_quantity }} pcs) 
+            {% endif %}
+          </a>
+        </li>
+    </ul>
+  </div>

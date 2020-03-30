@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %} 
+        {{ title}} 
+      {% endblock title %}
+    </title>
+    {% block css %}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}" />
+    {% endblock css %}
+    {% block js %}
+      <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/basket_script.js' %}"></script>
+    {% endblock js %}
+  </head>
+  <body>
+    <div class="basket_container">
+      <div class="h2 text-center head">
+        Your basket, {% if user.first_name %}{{ user.first_name|title }}{% else %}User{% endif %}
+        </div>
+
+    {% block content %}
+    {% endblock content %}
+    </div>
+
+    <div class="clr"></div>
+    {% block footer %}
+    <div class="footer">
+      <div class="networks">
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-rss"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-vk"></i></a>
+          </li>
+        </ul>
+      </div>
+      <small>Все права защищены &copy; 2020</small>
+    </div>
+    {% endblock footer %}
+  </div>
+  </body>
+</html>

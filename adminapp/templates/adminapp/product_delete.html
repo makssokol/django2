@@ -1,0 +1,18 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="product_delete">
+    Are you sure? <strong>{{ object.name }}</strong>?
+    <form action="{% url 'admin:product_delete' object.pk %}" method="post">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" value="delete">
+    </form>
+    <button class="btn btn-success">
+        <a href="{% url 'admin:products' object.category.pk %}">
+            cancel
+        </a>
+    </button>
+</div>
+{% endblock %}

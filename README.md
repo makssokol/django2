@@ -1,1 +1,1 @@
-# django2
+# django_basic
