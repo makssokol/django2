@@ -10,7 +10,7 @@ import random
 # Create your views here.
 
 def main(request):
-    title = "главная",
+    title = "Art Gallery Flame Art"
     
     content = {"title": title}
     return render(request, "mainapp/index.html", content)

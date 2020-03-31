@@ -37,25 +37,22 @@ def basket_add(request, pk):
 
 @login_required
 def basket_remove(request, pk):
-    basket_record = get_object_or_404(Basket, pk=pk)
-    basket_record.delete()
+    get_object_or_404(Basket, pk=pk).delete()
     return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
 
 @login_required
 def basket_edit(request, pk, quantity):
     if request.is_ajax():
-        print(f"{pk} - {quantity}")
-        new_basket_item = Basket.objects.get(pk=int(pk))
-
+        basket_item = get_object_or_404(Basket, pk=int(pk))
+        quantity = int(quantity)
         if quantity > 0:
-            new_basket_item.quantity  = quantity
-            new_basket_item.save()
+            basket_item.quantity = quantity
+            basket_item.save()
         else:
-            new_basket_item.delete()
+            basket_item.delete()
 
-        basket_items = Basket.objects.filter(user=request.user).order_by("product__category")
         content = {
-            "basket_items": basket_items,
+            "basket_items": request.user.basket.all().order_by('product__category'),
             "media_url": settings.MEDIA_URL,
             }
         result = render_to_string("basketapp/includes/inc_basket_list.html", content)

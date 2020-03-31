@@ -8,7 +8,7 @@ def forward_func(apps, schema_editor):
         try:
             from authapp.models import ArtShopUser
             ArtShopUser.objects.create_superuser(
-                "max", "a@a.aa", "a", age=40
+                "django", "a@a.aa", "geekbrains", age=40
             )
         except:
             print("Can't create superuser for debug")
@@ -18,7 +18,7 @@ def reverse_func(apps, schema_editor):
         try:
             from authapp.models import ArtShopUser
             ArtShopUser.objects.delete_superuser(
-                "admin", "a@a.aa", "admin", age=40
+                "django", "a@a.aa", "geekbrains", age=40
             )
         except:
             print("Can't delete superuser for debug")

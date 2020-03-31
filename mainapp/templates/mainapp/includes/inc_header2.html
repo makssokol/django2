@@ -10,7 +10,7 @@
       {% if user.is_authenticated %}
       <li>
         <a href="{% url 'auth:edit' %}">
-          {{ user.first_name|default:'User' }}
+          {{ user.first_name|default:'User'|title }}
         </a>
       </li>
       {% endif %}
@@ -30,7 +30,7 @@
           <a href="{% url 'basket:view' %}" class="basket"><i class="fas fa-shopping-basket"></i>
           <span>
             {% if basket %} 
-              {{ basket.0.total_price|stringformat:"d"|intcomma }} $ ({{ basket.0.total_quantity }} pcs) 
+              {{ basket.0.total_cost|stringformat:"d"|intcomma }} $ ({{ basket.0.total_quantity }} pcs) 
             {% endif %}
           </a>
         </li>

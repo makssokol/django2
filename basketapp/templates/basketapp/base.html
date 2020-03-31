@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
       {% block title %} 
-        {{ title}} 
+        {{ title }} 
       {% endblock title %}
     </title>
     {% block css %}
@@ -22,13 +22,13 @@
     {% endblock css %}
     {% block js %}
       <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-    <script src="{% static 'js/basket_script.js' %}"></script>
+      <script src="{% static 'js/basket_script.js' %}"></script>
     {% endblock js %}
   </head>
   <body>
     <div class="basket_container">
       <div class="h2 text-center head">
-        Your basket, {% if user.first_name %}{{ user.first_name|title }}{% else %}User{% endif %}
+        Your basket, {{ user.first_name|title|default:'User' }}
         </div>
 
     {% block content %}

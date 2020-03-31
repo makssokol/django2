@@ -1,0 +1,7 @@
+# Dirs
+.vscode
+__pycache__
+
+# Files
+*sqlite3
+*.pyc
