@@ -1,0 +1,12 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Confirm your account authorization User1
+From: django@artshop.local
+To: user1@artshop.local
+Date: Tue, 31 Mar 2020 09:12:56 -0000
+Message-ID: <158564597655.23253.15734074425312242297@maxUb>
+
+For account authorization User1 on website         http://localhost:8000 follow the link: 
+ /auth/verify/user1@artshop.local/63245ca9fa1c54fabec07277d4d6d831237f2595/
+-------------------------------------------------------------------------------

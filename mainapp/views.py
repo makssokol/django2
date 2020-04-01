@@ -9,11 +9,13 @@ import random
 
 # Create your views here.
 
+
 def main(request):
     title = "Art Gallery Flame Art"
     
-    content = {"title": title}
-    return render(request, "mainapp/index.html", content)
+    context = {"title": title}
+    return render(request, "mainapp/index.html", context)
+
 
 def get_basket(user):
     if user.is_authenticated:
@@ -21,14 +23,14 @@ def get_basket(user):
     else:
         return []
 
+
 def get_hot_product():
     products = ArtObject.objects.filter(is_active=True, category__is_active=True)
     return random.sample(list(products), 1)[0]
 
-def products(request, pk=None, page=1):
-    title = "Картины"
 
-    basket = get_basket(request.user)
+def products(request, pk=None, page=1):
+    title = "Art Objects"
     if request.user.is_authenticated:
         basket = Basket.objects.filter(user=request.user)
     if pk is not None:
@@ -50,7 +52,6 @@ def products(request, pk=None, page=1):
             "products": products_paginator, 
             "category": category, 
             "media_url": settings.MEDIA_URL,
-            "basket": basket,
             }
         return render(request, "mainapp/products_list.html", content)
     products = ArtObject.objects.filter(is_active=True, category__is_active=True)[:3]
@@ -58,39 +59,42 @@ def products(request, pk=None, page=1):
         "title": title,
         "products": products,
         "media_url": settings.MEDIA_URL,
-        "basket": basket,
     }
     if pk:
         print(f"User select category: {pk}")
     return render(request, "mainapp/products.html", content)
 
+
 def contacts(request):
-    title = "о нас"
+    title = "About us"
     visit_date = timezone.now()
     locations = Contact.objects.all()
-    content = {"title": title, "visit_date": visit_date, "locations": locations}
+    content = {
+        "title": title, 
+        "visit_date": visit_date, 
+        "locations": locations
+        }
     return render(request, "mainapp/contacts.html", content)
 
+
 def catalog(request):
-    title = "Каталог"
+    title = "Catalog"
     links_menu = ArtCategory.objects.all()
-    basket = get_basket(request.user)
     hot_product = get_hot_product()
     content = {
         "title": title, 
         "links_menu": links_menu,
         "hot_product": hot_product,
         "media_url": settings.MEDIA_URL,
-        "basket": basket,
         }
     return render(request, "mainapp/catalog.html", content)
 
+
 def product(request, pk):
-    title = "продукты"
+    title = "Art Objects"
     content = {
         "title": title,
         "product": get_object_or_404(ArtObject, pk=pk),
-        "basket": get_basket(request.user),
         "media_url": settings.MEDIA_URL,
     }
     return render(request, "mainapp/product.html", content)

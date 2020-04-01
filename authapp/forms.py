@@ -1,5 +1,8 @@
+import hashlib
+import random
+from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
-from .models import ArtShopUser
+from authapp.models import ArtShopUser
 
 class ArtShopUserLoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
@@ -12,6 +15,10 @@ class ArtShopUserLoginForm(AuthenticationForm):
         fields = ("username", "password")
 
 class ArtShopUserRegisterForm(UserCreationForm):
+    class Meta:
+        model = ArtShopUser
+        fields = ("username", "first_name", "password1", "password2", "email", "age", "gender", "avatar")
+    
     def __init__(self, *args, **kwargs):
         super(ArtShopUserRegisterForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
@@ -24,9 +31,14 @@ class ArtShopUserRegisterForm(UserCreationForm):
             raise forms.ValidationError("Too young for such purchases")
         return data
 
-    class Meta:
-        model = ArtShopUser
-        fields = ("username", "first_name", "password1", "password2", "email", "age", "gender", "avatar")
+    def save(self, commit=True):
+        user = super().save()
+        user.is_active = False
+        salt = hashlib.sha1(str(random.random()).encode('utf8')).hexdigest()[:6]
+        user.activation_key = hashlib.sha1((user.email + salt).encode('utf8')).hexdigest()
+        user.save()
+        return user
+    
 
 class ArtShopUserEditForm(UserChangeForm):
     def __init__(self, *args, **kwargs):

@@ -1,1 +1,3 @@
-# django_basic
+# django2
+
+1. Ajax так и не завелся

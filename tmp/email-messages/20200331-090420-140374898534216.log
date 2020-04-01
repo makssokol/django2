@@ -1,0 +1,12 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Confirm your account authorization Alex
+From: django@artshop.local
+To: alex@geek.ru
+Date: Tue, 31 Mar 2020 09:04:20 -0000
+Message-ID: <158564546025.23037.13345806910383227521@maxUb>
+
+For account authorization Alex on website         http://localhost:8000 follow the link: 
+ /auth/verify/alex@geek.ru/fc12c953e4a5c7cdb0a36bba6164f238921484e5/
+-------------------------------------------------------------------------------
