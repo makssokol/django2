@@ -12,9 +12,12 @@
     <br>
     <input class="form-control" type="submit" value="enter">
 </form>
-<button class="btn btn-round form-control">
-    <a href="{% url 'auth:register' %}" class="">
+    <a href="{% url 'auth:register' %}" class="btn btn-round form-control">
         Register
     </a>
-</button>
+
+    <a href="{% url 'social:begin' 'google-oath2' %}?next=/"
+    class="btn btn-round form-control">Login with Google</a>
+    <a href="{% url 'social:begin' 'vk-oath2' %}?next=/"
+    class="btn btn-round form-control">Login with VK</a>
 {% endblock content %}

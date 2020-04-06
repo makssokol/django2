@@ -10,8 +10,8 @@ def expiration_datetime():
 
 class ArtShopUser(AbstractUser):
     avatar = models.ImageField(upload_to="users_avatars", blank=True)
-    age = models.PositiveIntegerField(verbose_name="age")
-    gender = models.CharField(verbose_name="gender", max_length=1)
+    age = models.PositiveIntegerField(verbose_name="age", default=18)
+    gender = models.CharField(verbose_name="gender", max_length=1, blank=True)
     activation_key = models.CharField(max_length=128, blank=True)
     activation_key_expires = models.DateTimeField(default=expiration_datetime)
 
@@ -20,3 +20,22 @@ class ArtShopUser(AbstractUser):
             return False
         else:
             return True
+        
+
+class ArtShopUserProfile(models.Model):
+    MALE = 'M'
+    FEMALE = 'F'
+
+    GENDER_CHOICES = (
+        (MALE, 'Man'),
+        (FEMALE, 'Woman')
+    )
+    
+    user = models.OneToOneField(ArtShopUser, on_delete=models.CASCADE, null=True)
+    tagline = models.CharField(verbose_name='tags', max_length=128, 
+                               blank=True)
+    aboutMe = models.TextField(verbose_name='about me', max_length=512, 
+                               blank=True)
+    gender = models.CharField(verbose_name='sex', max_length=1, 
+                              choices=GENDER_CHOICES, blank=True)
+    

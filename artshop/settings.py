@@ -152,8 +152,8 @@ EMAIL_FILE_PATH = 'tmp/email-messages/'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'social_core.backends.vk.VKOauth2',
-    'social_core.backends.google.GoogleOauth2',
+    # 'social_core.backends.vk.VKOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
 )
 
 # with open ('artshop/vk.json', 'r') as f:

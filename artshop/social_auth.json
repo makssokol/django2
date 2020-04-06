@@ -1,1 +1,6 @@
-{"web":{"client_id":"906687054442-87bg8b5sjfqntlvpn7rb4d5ctojk1s64.apps.googleusercontent.com","project_id":"mydjango2","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"M-gFN-r5ZdM7abRTsCEIMdik","redirect_uris":["http://127.0.0.1:8000/auth/verify/complete/google-oauth2/","http://127.0.0.1:8000/auth/complete/google-oauth2/"]}}
+{
+    "SOCIAL_AUTH_GOOGLE_OAUTH2_KEY": "906687054442-87bg8b5sjfqntlvpn7rb4d5ctojk1s64.apps.googleusercontent.com",
+    "SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET": "M-gFN-r5ZdM7abRTsCEIMdik",
+    "SOCIAL_AUTH_VK_OAUTH2_KEY": "7393572",
+    "SOCIAL_AUTH_VK_OAUTH2_SECRET": "MaIpMRf4Lqz3O2vpnqIg"
+}

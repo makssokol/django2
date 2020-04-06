@@ -2,7 +2,7 @@ import hashlib
 import random
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
-from authapp.models import ArtShopUser
+from authapp.models import ArtShopUser, ArtShopUserProfile
 
 class ArtShopUserLoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
@@ -55,4 +55,19 @@ class ArtShopUserEditForm(UserChangeForm):
 
     class Meta:
         model = ArtShopUser
-        fields = ("username", "first_name", "email", "age", "gender", "avatar")
+        fields = ("username", "first_name", "email", "age", "avatar")
+        
+        
+    
+class ArtShopUserProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = ArtShopUserProfile
+        exclude = ('user', )
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs["class"] = "form-control"
+  
+
+    
