@@ -10,12 +10,12 @@
     {{ object.last_name|title }}
     {% endif %})
     {% endif %}?
-    <form action="{% url 'admin:user_delete' object.pk %}" method="post">
+    <form action="{% url 'myadmin:user_delete' object.pk %}" method="post">
         {% csrf_token %}
         <input class="btn btn-danger" type="submit" value="delete">
     </form>
     <button class="btn btn-success">
-        <a href="{% url 'admin:users' %}">cancel</a>
+        <a href="{% url 'myadmin:users' %}">cancel</a>
     </button>
 </div>
 {% endblock content %}
