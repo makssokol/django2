@@ -5,6 +5,7 @@ from django.urls import reverse
 from authapp.forms import ArtShopUserEditForm, ArtShopUserLoginForm, ArtShopUserProfileEditForm, ArtShopUserRegisterForm
 from django.core.mail import send_mail
 from artshop import settings
+from django.db import transaction
 from authapp.models import ArtShopUser
 
 
@@ -55,6 +56,7 @@ def register(request):
     return render(request, "authapp/register.html", content)
 
 
+@transaction.atomic
 def edit(request):
     title = "редактирование"
 
@@ -65,7 +67,6 @@ def edit(request):
                                         instance=request.user.artshopuserprofile)
         if edit_form.is_valid() and profile_form.is_valid():
             edit_form.save()
-            profile_form.save()
             return HttpResponseRedirect(reverse("auth:edit"))
     else:
         edit_form = ArtShopUserEditForm(instance=request.user)

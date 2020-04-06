@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.timezone import now
 from datetime import timedelta
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 
 def expiration_datetime():
@@ -39,3 +41,14 @@ class ArtShopUserProfile(models.Model):
     gender = models.CharField(verbose_name='sex', max_length=1, 
                               choices=GENDER_CHOICES, blank=True)
     
+    @receiver(post_save, sender=ArtShopUser)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            ArtShopUserProfile.objects.create(user=instance)
+        else:
+            instance.artshopuserprofile.save()
+            
+    # @receiver(post_save, sender=ArtShopUser)
+    # def save_user_profile(sender, instance, created, **kwargs):
+    #     if not created:
+    #         instance.artshopuserprofile.save()
