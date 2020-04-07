@@ -5,7 +5,6 @@ window.onload = function () {
                 url: "/basket/edit/" + target_href.name + "/" + target_href.value + "/",
                 success: function (data) {
                     $(".basket-list").html(data.result);
-                    console.log('ajax done');
                 }
             });
     });
