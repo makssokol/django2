@@ -9,9 +9,24 @@
       
       {% if user.is_authenticated %}
       <li>
-        <a href="{% url 'auth:edit' %}">
-          {{ user.first_name|default:'User'|title }}
-        </a>
+        <div class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">
+            {{ user.first_name|default:'User' }}
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="{% url 'auth:edit' %}">
+                profile
+              </a>
+            </li>
+            <li>
+              {% comment %} <a href="{% url 'ordersapp:orders_list' %}"> {% endcomment %}
+                orders
+              </a>
+            </li>
+          </ul>
+        </div>
       </li>
       {% endif %}
       {% if user.is_superuser %}

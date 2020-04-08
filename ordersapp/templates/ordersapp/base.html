@@ -1,6 +1,6 @@
+<!DOCTYPE html>
 {% load static %}
 
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,26 +20,19 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}" />
     {% endblock css %}
-    
     {% block js %}
       <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-      <script src="{% static 'js/bootstrap.min.js' %}"></script>
     {% endblock js %}
-      
   </head>
   <body>
-    <div class="container">
-      {% block header1 %}
-      {% include 'mainapp/includes/inc_header1.html' %}
-      {% endblock header1 %} 
-      
-      {% block header2 %}
-      
-      {% include 'mainapp/includes/inc_header2.html' %}
 
-      {% endblock header2 %} 
-      {% block content %} {% endblock content %}
-  
+    <div class="order_container">
+
+        {% block container %}
+          
+        {% endblock container %}
+    </div>
+
     <div class="clr"></div>
     {% block footer %}
     <div class="footer">
@@ -59,7 +52,7 @@
           </li>
         </ul>
       </div>
-      <small>Все права защищены &copy; 2020</small>
+      <small>All rights reserved &copy; 2020</small>
     </div>
     {% endblock footer %}
   </div>
