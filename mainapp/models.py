@@ -16,6 +16,7 @@ class ArtObject(models.Model):
     artist = models.CharField(verbose_name="author", max_length=60, blank=True)
     description = models.TextField(verbose_name="artobject description", blank=True)
     price = models.DecimalField(verbose_name="price", max_digits=12, decimal_places=2, default=0)
+    quantity = models.PositiveIntegerField(verbose_name='quantity', default=0)
     location = models.CharField(verbose_name="location", max_length=128)
     is_active = models.BooleanField(verbose_name="art object is active", default=True)
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from ordersapp.models import Order, OrderItem
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from ordersapp.forms import OrderForm, OrderItemForm
 from django.urls import reverse_lazy
 from django.forms.models import inlineformset_factory
@@ -60,3 +60,48 @@ class OrderItemsCreate(CreateView):
 
         return super().form_valid(form)
         
+        
+class OrderItemsUpdate(UpdateView):
+    model = Order
+    form_class = OrderForm
+    success_url = reverse_lazy('ordersapp:index')
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        OrderFormSet = inlineformset_factory(Order, OrderItem, form=OrderItemForm, extra=1)
+
+        if self.request.method == 'POST':
+            data['orderitems'] = OrderFormSet(self.request.POST, self.request.FILES, instance=self.object)
+        elif self.request.method == 'GET':
+            data['orderitems'] = OrderFormSet(instance=self.object)
+
+        return data
+
+    def form_valid(self, form):
+        context = self.get_context_data()
+        orderitems = context['orderitems']
+
+        with transaction.atomic():
+            self.object = form.save()
+            if orderitems.is_valid():
+                orderitems.instance = self.object
+                orderitems.save()
+
+        if self.object.get_total_cost() == 0:
+            self.object.delete()
+
+        return super().form_valid(form)
+    
+class OrderDelete(DeleteView):
+    model = Order
+    success_url = reverse_lazy('ordersapp:index')
+    
+    
+class OrderRead(DetailView):
+    model = Order
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'order/view'
+        return context
+    

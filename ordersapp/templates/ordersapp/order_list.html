@@ -23,20 +23,20 @@
                 <td>{{ item.updated|date:"Y-m-d H:i:s" }}</td>
                 <td>{{ item.get_status_display }}</td>
                 <td>
-                    {% comment %} <a href="{% url 'ordersapp:order_read' item.pk %}"> {% endcomment %}
+                    <a href="{% url 'ordersapp:order_read' item.pk %}">
                         details
                     </a>
                 </td>
                 <td>
                     {% if item.status == 'F' %}
-                        {% comment %} <a href="{% url 'ordersapp:order_update' item.pk %}"> {% endcomment %}
+                        <a href="{% url 'ordersapp:order_update' item.pk %}">
                             edit
                         </a>
                     {% endif %}
                 </td>
                 <td>
                     {% if item.status == 'F' %}
-                        {% comment %} <a href="{% url 'ordersapp:order_delete' item.pk %}"> {% endcomment %}
+                        <a href="{% url 'ordersapp:order_delete' item.pk %}">
                             delete
                         </a>
                     {% endif %}

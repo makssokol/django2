@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block container %}
-    {% comment %} {% include 'ordersapp/includes/inc__order_summary.html' %} {% endcomment %}
+    {% include 'ordersapp/includes/inc__order_summary.html' %}
     <div class="order_form">
         <form method="post">
             {% csrf_token %}
@@ -36,11 +36,11 @@
                     </tr>
                 {% endfor %}
             </table>
-            <button type="submit" value="сохранить"
+            <button type="submit" value="save"
                     class="btn btn-default btn-round form-control last">
-                сохранить
+                save
             </button>
-            {% comment %} {% include 'ordersapp/includes/inc__order_actions.html' %} {% endcomment %}
+            {% include 'ordersapp/includes/inc__order_actions.html' %}
         </form>
     </div>
 {% endblock %}
