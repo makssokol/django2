@@ -21,7 +21,7 @@ def forwards_func(apps, schema_editor):
         artist="Piero della Francesca",
         description="It is one of the most famous works of the Italian Renaissance",
         price=180000000,
-        location="Uffizi Gallery",
+        location="Uffizi Gallery"
     )
 
     art_cat_obj2 = art_cat_model.objects.create(
@@ -38,14 +38,14 @@ def forwards_func(apps, schema_editor):
         artist="Rembrandt Harmenszoon van Rijn",
         description="The Night Watch is one of the most famous Dutch Golden Age paintings",
         price=350000000,
-        location="Rijksmuseum",
+        location="Rijksmuseum"
     )
 
     art_cat_obj3 = art_cat_model.objects.create(
-            pk=3,
-            name="French Impressionism",
-            description="Radicals of 19th century"
-        )
+        pk=3,
+        name="French Impressionism",
+        description="Radicals of 19th century"
+    )
 
     artobj_model.objects.create(
         pk=3,
@@ -55,7 +55,7 @@ def forwards_func(apps, schema_editor):
         artist="Pierre-Auguste Renoir",
         description="One of Impressionism's most celebrated masterpieces",
         price=98000000,
-        location="Musée d'Orsay",
+        location="Musée d'Orsay"
     )
 
     artobj_model.objects.create(
@@ -66,7 +66,7 @@ def forwards_func(apps, schema_editor):
         artist="Raffaello Sanzio da Urbino",
         description="Truly rare and extraordinary work",
         price=650000000,
-        location="Gemäldegalerie Alte Meister, Dresden",
+        location="Gemäldegalerie Alte Meister, Dresden"
     )
 
     artobj_model.objects.create(
@@ -77,7 +77,7 @@ def forwards_func(apps, schema_editor):
         artist="Masaccio",
         description="The earliest surviving painting to use systematic linear perspective",
         price=150000000,
-        location="Santa Maria Novella, Florence",
+        location="Santa Maria Novella, Florence"
     )
 
     artobj_model.objects.create(
@@ -88,7 +88,7 @@ def forwards_func(apps, schema_editor):
         artist="Johannes Vermeer",
         description="The most beautiful painting in the Netherlands",
         price=270000000,
-        location="Mauritshuis, The Hague, Netherlands",
+        location="Mauritshuis, The Hague, Netherlands"
     )
 
     artobj_model.objects.create(
@@ -99,7 +99,7 @@ def forwards_func(apps, schema_editor):
         artist="Peter Paul Rubens",
         description="Combination of Italian Baroque aesthetics with old style of Italian Renaissance",
         price=340000000,
-        location="Mauritshuis, The Hague, Netherlands",
+        location="Mauritshuis, The Hague, Netherlands"
     )
 
     artobj_model.objects.create(
@@ -110,7 +110,7 @@ def forwards_func(apps, schema_editor):
         artist="Claude Monet",
         description="One of Monet's most recognizable and revered works and of impressionism as a whole",
         price=295000000,
-        location="National Gallery of Art, Washington",
+        location="National Gallery of Art, Washington"
     )
 
     artobj_model.objects.create(
@@ -121,7 +121,7 @@ def forwards_func(apps, schema_editor):
         artist="Vincent van Gogh",
         description="The only self-portrait with bandaged ear in art history",
         price=140000000,
-        location="Courtauld Galleries, London",
+        location="Courtauld Galleries, London"
     )
 
     con_model.objects.create(

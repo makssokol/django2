@@ -11,7 +11,7 @@ from authapp.models import ArtShopUser
 
 
 def login(request):
-    title = "вход"
+    title = "login"
 
     login_form = ArtShopUserLoginForm(data=request.POST or None)
     next_page = request.GET["next"] if "next" in request.GET.keys() else ""
@@ -36,7 +36,7 @@ def logout(request):
 
 
 def register(request):
-    title = "регистрация"
+    title = "registration"
 
     if request.method == "POST":
         register_form = ArtShopUserRegisterForm(request.POST, request.FILES)
@@ -58,7 +58,7 @@ def register(request):
 
 @transaction.atomic
 def edit(request):
-    title = "редактирование"
+    title = "edit"
 
     if request.method == "POST":
         edit_form = ArtShopUserEditForm(request.POST, request.FILES, 

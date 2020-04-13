@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('authapp', '0002_create_debug_admin'),
+        ('authapp', '0001_initial'),
     ]
 
     operations = [

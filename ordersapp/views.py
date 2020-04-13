@@ -1,11 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from ordersapp.models import Order, OrderItem
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from ordersapp.forms import OrderForm, OrderItemForm
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.forms.models import inlineformset_factory
 from basketapp.models import Basket
 from django.db import transaction
+from django.http import HttpResponseRedirect
+from django.db.models.signals import pre_save, pre_delete
+from django.dispatch import receiver
 
 
 class OrderList(ListView):
@@ -104,4 +107,28 @@ class OrderRead(DetailView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'order/view'
         return context
+    
+    
+def order_forming_complete(request, pk):
+    order = get_object_or_404(Order, pk=pk)
+    order.status = Order.SENT_TO_PROCEED
+    order.save()
+    return HttpResponseRedirect(reverse('ordersapp:index'))
+
+@receiver(pre_save, sender=OrderItem)
+@receiver(pre_save, sender=Basket)
+def product_quantity_updated_save(sender, update_fields, instance, **kwargs):
+    if instance.pk:
+        instance.product.quantity -= instance.quantity - \
+            sender.get_item(instance.pk).quantity
+    else:
+        instance.product.quantity -= instance.quantity
+    instance.product.save()
+
+        
+@receiver(pre_delete, sender=OrderItem)
+@receiver(pre_delete, sender=Basket)
+def product_quantity_update_delete(sender, instance, **kwargs):
+    instance.product.quantity += instance.quantity
+    instance.product.save()
     

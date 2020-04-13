@@ -19,4 +19,5 @@ urlpatterns = [
     path("products/read/<int:pk>", adminapp.ArtObjectDetailView.as_view(), name="product_read"),
     path("products/update/<int:pk>/", adminapp.product_update, name="product_update"),
     path("products/delete/<int:pk>/", adminapp.ArtObjectDeleteView.as_view(), name="product_delete"),
+    # path("orders/<int:pk>", adminapp.OrdersListView.as_view(), name="orders"),
 ]

@@ -26,12 +26,16 @@ def basket_add(request, pk):
         return HttpResponseRedirect(reverse("products:product", args=[pk]))
     product = get_object_or_404(ArtObject, pk=pk)
     basket = Basket.objects.filter(user=request.user, product=product).first()
+    # print(f"Product quantity: {product.quantity}")
 
     if not basket:
         basket = Basket(user=request.user, product=product)
 
-    basket.quantity += 1
-    basket.save()
+    if product.quantity > 0:
+        basket.quantity += 1
+        basket.save()
+    else:
+        raise Exception(f"{product.name} is out of stock")
 
     return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
 

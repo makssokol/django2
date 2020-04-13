@@ -46,7 +46,7 @@ class Order(models.Model):
         return sum(map(lambda x: x.quantity * x.product.price, 
                        self.orderitems.select_related()))
 
-    def delete(self):
+    def delete(self, *args, **kwargs):
         for item in self.orderitems.select_related():
             item.product.quantity += item.quantity
             item.product.save()
@@ -66,4 +66,19 @@ class OrderItem(models.Model):
     def get_product_cost(self):
         return self.product.price * self.quantity
     
+    @classmethod
+    def get_item(cls, pk):
+        try:
+            return cls.objects.get(pk=pk)
+        except Exception as e:
+            print(e)
+    
+    # def save(self, *args, **kwargs):
+    #     if self.pk:
+    #         self.product.quantity -= self.quantity 
+    #         - self.__class__.get_item(self.pk).quantity
+    #     else:
+    #         self.product.quantity -= self.quantity
+    #     self.product.save()
+    #     super().save(*args, **kwargs)
     
