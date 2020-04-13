@@ -39,6 +39,7 @@ class OrderItemsCreate(CreateView):
                 for num, form in enumerate(formset.forms):
                     form.initial['product'] = basket_items[num].product
                     form.initial['quantity'] = basket_items[num].quantity
+                    form.initial['price'] = basket_items[num].product.price
                 # basket_items.delete()
             else:
                 formset = OrderFormSet()
@@ -74,9 +75,14 @@ class OrderItemsUpdate(UpdateView):
         OrderFormSet = inlineformset_factory(Order, OrderItem, form=OrderItemForm, extra=1)
 
         if self.request.method == 'POST':
-            data['orderitems'] = OrderFormSet(self.request.POST, self.request.FILES, instance=self.object)
+            data['orderitems'] = OrderFormSet(self.request.POST, 
+                                              self.request.FILES, instance=self.object)
         elif self.request.method == 'GET':
-            data['orderitems'] = OrderFormSet(instance=self.object)
+            formset = OrderFormSet(instance=self.object)
+            for form in formset.forms:
+                if form.instance.pk:
+                    form.initial['price'] = form.instance.product.price
+            data['orderitems'] = formset
 
         return data
 
