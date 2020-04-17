@@ -6,9 +6,10 @@ from django.urls import reverse, reverse_lazy
 from django.forms.models import inlineformset_factory
 from basketapp.models import Basket
 from django.db import transaction
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.db.models.signals import pre_save, pre_delete
 from django.dispatch import receiver
+from mainapp.models import ArtObject
 
 
 class OrderList(ListView):
@@ -137,4 +138,10 @@ def product_quantity_updated_save(sender, update_fields, instance, **kwargs):
 def product_quantity_update_delete(sender, instance, **kwargs):
     instance.product.quantity += instance.quantity
     instance.product.save()
-    
+
+def get_product_price(request, pk):
+    if request.is_ajax():
+        product = ArtObject.objects.filter(pk=int(pk)).first()
+        if product:
+            return JsonResponse({'price': product.price if product else 0})
+            

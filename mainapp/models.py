@@ -22,6 +22,10 @@ class ArtObject(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.category.name})"
+    
+    @classmethod
+    def get_items(cls):
+        return cls.objects.filter(is_active=True)
 
 class Contact(models.Model):
     phone = models.CharField(max_length=50, verbose_name="phone number")

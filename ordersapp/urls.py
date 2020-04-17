@@ -5,12 +5,13 @@ app_name = 'ordersapp'
 
 urlpatterns = [
     path('', ordersapp.OrderList.as_view(), name='index'),
-    path('create/', ordersapp.OrderItemsCreate.as_view(), 
+    path('create/', ordersapp.OrderItemsCreate.as_view(),
          name='order_create'),
-    path('read/<int:pk>/', ordersapp.OrderRead.as_view(), 
+    path('read/<int:pk>/', ordersapp.OrderRead.as_view(),
          name='order_read'),
-    path('update/<int:pk>/', ordersapp.OrderItemsUpdate.as_view(), 
-         name='order_update'), 
-    path('delete/<int:pk>/', ordersapp.OrderDelete.as_view(), 
-         name='order_delete'), 
+    path('update/<int:pk>/', ordersapp.OrderItemsUpdate.as_view(),
+         name='order_update'),
+    path('delete/<int:pk>/', ordersapp.OrderDelete.as_view(),
+         name='order_delete'),
+    path('product/<int:pk>/price/', ordersapp.get_product_price),
 ]

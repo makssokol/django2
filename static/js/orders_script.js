@@ -11,7 +11,7 @@ window.onload = function () {
 
     let totalForms = parseInt($('input[name="orderitems-TOTAL_FORMS"]').val());
     let orderTotalQuantity = parseInt($orderTotalQuantityDOM.text()) || 0;
-    let orderTotalCost = parseFloat($('.order_total_cost').text().replace(',', '.')) || 0;
+    let orderTotalCost = parseInt($('.order_total_cost').text().replace(/\,/g, '')) || 0;
     let $orderForm = $('.order_form');
 
     for (let i = 0; i < totalForms; i++) {
@@ -34,6 +34,7 @@ window.onload = function () {
         let targetName = row[0].querySelector('input[type="number"]').name;
         orderitemNum = parseInt(targetName.replace('orderitems-', '').replace('-quantity', ''));
         deltaQuantity = -quantityArr[orderitemNum];
+        // quantityArr[orderitemNum] = 0;
         orderSummaryUpdate(priceArr[orderitemNum], deltaQuantity);
     }
 
@@ -43,7 +44,7 @@ window.onload = function () {
             orderTotalCost += quantityArr[i] * priceArr[i];
         }
         $orderTotalQuantityDOM.html(orderTotalQuantity.toString());
-        $('.order_total_cost').html(Number(orderTotalCost.toFixed(2)).toString());
+        $('.order_total_cost').html(Number(orderTotalCost.toFixed(0)).toString());
     }
 
     $orderForm.on('change', 'input[type="number"]', function (event) {
@@ -73,9 +74,36 @@ window.onload = function () {
         removed: deleteOrderItem
     });
 
-    // $orderForm.on('change', 'select', function (event) {
-    //     let target = event.target;
-    //     console.log(target);
-    // });
 
+    $orderForm.on('change', 'select', function (event) {
+        let target = event.target;
+        let orderItemNum = parseInt(
+            target.name.replace('orderitems-', '').replace('-product', ''));
+        let orderItemProductPk = target.options[target.selectedIndex].value;
+
+        if (orderItemProductPk) {
+            $.ajax({
+                url: "/orders/product/" + orderItemProductPk + "/price/",
+                success: function (data) {
+                    if (data.price) {
+                        priceArr[orderItemNum] = parseFloat(data.price);
+                        if (isNaN(quantityArr[orderItemNum])) {
+                            quantityArr[orderItemNum] = 0;
+                        }
+                        let priceHtml = '<span>' +
+                            data.price.toString().replace('.', ',') +
+                            '</span> $';
+                        let currentTR = $('.order_form table').find('tr:eq(' + (orderItemNum + 1) + ')');
+                        currentTR.find('td:eq(2)').html(priceHtml);
+                        let $productQuantity = currentTR.find('input[type="number"]');
+                        if (!$productQuantity.val() || isNaN($productQuantity.val())) {
+                            $productQuantity.val(0);
+                        }
+                        orderSummaryUpdate(quantityArr[orderItemNum],
+                            parseInt($productQuantity.val()));
+                    }
+                },
+            });
+        }
+    });
 };
