@@ -4,7 +4,8 @@ from django.db import models
 class ArtCategory(models.Model):
     name = models.CharField(verbose_name="name", max_length=64, unique=True)
     description = models.TextField(verbose_name="description", blank=True)
-    is_active = models.BooleanField(verbose_name="category is active", default=True)
+    is_active = models.BooleanField(verbose_name="category is active", 
+                                    default=True, db_index=True)
 
     def __str__(self):
         return self.name
@@ -15,10 +16,12 @@ class ArtObject(models.Model):
     image = models.ImageField(upload_to="art_images", blank=True)
     artist = models.CharField(verbose_name="author", max_length=60, blank=True)
     description = models.TextField(verbose_name="artobject description", blank=True)
-    price = models.DecimalField(verbose_name="price", max_digits=12, decimal_places=2, default=0)
+    price = models.DecimalField(verbose_name="price", max_digits=12, 
+                                decimal_places=2, default=0)
     quantity = models.PositiveIntegerField(verbose_name='quantity', default=0)
     location = models.CharField(verbose_name="location", max_length=128)
-    is_active = models.BooleanField(verbose_name="art object is active", default=True)
+    is_active = models.BooleanField(verbose_name="art object is active", 
+                                    default=True, db_index=True)
 
     def __str__(self):
         return f"{self.name} ({self.category.name})"

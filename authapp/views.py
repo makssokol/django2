@@ -5,6 +5,7 @@ from django.urls import reverse
 from authapp.forms import ArtShopUserEditForm, ArtShopUserLoginForm, ArtShopUserProfileEditForm, ArtShopUserRegisterForm
 from django.core.mail import send_mail
 from artshop import settings
+from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from authapp.models import ArtShopUser
 
@@ -30,6 +31,7 @@ def login(request):
     return render(request, "authapp/login.html", content)
 
 
+@login_required
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse("main"))
@@ -56,6 +58,7 @@ def register(request):
     return render(request, "authapp/register.html", content)
 
 
+@login_required
 @transaction.atomic
 def edit(request):
     title = "edit"

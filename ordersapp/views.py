@@ -10,13 +10,19 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.db.models.signals import pre_save, pre_delete
 from django.dispatch import receiver
 from mainapp.models import ArtObject
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 
 class OrderList(ListView):
     model = Order
     
     def get_queryset(self):
-        return self.model.objects.filter(is_active=True)
+        return self.model.objects.filter(is_active=True, user=self.request.user)
+    
+    @method_decorator(login_required())
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
 class OrderItemsCreate(CreateView):
     model = Order
@@ -64,6 +70,10 @@ class OrderItemsCreate(CreateView):
             self.object.delete()
 
         return super().form_valid(form)
+    
+    @method_decorator(login_required())
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
         
         
 class OrderItemsUpdate(UpdateView):
@@ -102,9 +112,17 @@ class OrderItemsUpdate(UpdateView):
 
         return super().form_valid(form)
     
+    @method_decorator(login_required())
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+    
 class OrderDelete(DeleteView):
     model = Order
     success_url = reverse_lazy('ordersapp:index')
+    
+    @method_decorator(login_required())
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
     
     
 class OrderRead(DetailView):
@@ -114,6 +132,10 @@ class OrderRead(DetailView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'order/view'
         return context
+    
+    @method_decorator(login_required())
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
     
     
 def order_forming_complete(request, pk):

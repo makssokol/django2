@@ -1,0 +1,1636 @@
+events: Ticks
+summary: 0
+fn=<method '__contains__' of 'dict' objects>
+0  0
+
+fn=<method 'get' of 'dict' objects>
+0  0
+
+fn=<method 'setdefault' of 'dict' objects>
+0  0
+
+fn=<method 'values' of 'dict' objects>
+0  0
+
+fn=<method 'append' of 'list' objects>
+0  0
+
+fn=<method 'reverse' of 'list' objects>
+0  0
+
+fn=<method 'decode' of 'bytes' objects>
+0  0
+
+fn=<method 'encode' of 'str' objects>
+0  0
+
+fn=<method 'replace' of 'str' objects>
+0  0
+
+fn=<method 'split' of 'str' objects>
+0  0
+
+fn=<method 'join' of 'str' objects>
+0  0
+
+fn=<method 'find' of 'str' objects>
+0  0
+
+fn=<method 'lower' of 'str' objects>
+0  0
+
+fn=<method 'lstrip' of 'str' objects>
+0  0
+
+fn=<method 'rfind' of 'str' objects>
+0  0
+
+fn=<method 'rstrip' of 'str' objects>
+0  0
+
+fn=<method 'rpartition' of 'str' objects>
+0  0
+
+fn=<method 'strip' of 'str' objects>
+0  0
+
+fn=<method 'upper' of 'str' objects>
+0  0
+
+fn=<method 'startswith' of 'str' objects>
+0  0
+
+fn=<method 'endswith' of 'str' objects>
+0  0
+
+fn=<method 'isdigit' of 'str' objects>
+0  0
+
+fn=<method 'format' of 'str' objects>
+0  0
+
+fn=<built-in method posix.stat>
+0  0
+
+fn=<built-in method posix.open>
+0  0
+
+fn=<built-in method posix.fspath>
+0  0
+
+fn=<method 'match' of '_sre.SRE_Pattern' objects>
+0  0
+
+fn=<built-in method _stat.S_ISDIR>
+0  0
+
+fn=<built-in method _thread.allocate_lock>
+0  0
+
+fn=<built-in method _thread.get_ident>
+0  0
+
+fn=<built-in method io.open>
+0  0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=_opener
+calls=1 1035
+0 0
+
+fn=<method 'clear' of 'collections.deque' objects>
+0  0
+
+fn=<built-in method fromtimestamp>
+0  0
+
+fn=<method 'timetuple' of 'datetime.datetime' objects>
+0  0
+
+fn=<built-in method _imp.acquire_lock>
+0  0
+
+fn=<built-in method _imp.release_lock>
+0  0
+
+fn=<built-in method builtins.getattr>
+0  0
+cfl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+cfn=__getattr__
+calls=1 98
+0 0
+
+fn=<built-in method builtins.hasattr>
+0  0
+cfl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+cfn=__getattr__
+calls=2 98
+0 0
+
+fn=<built-in method builtins.id>
+0  0
+
+fn=<built-in method builtins.isinstance>
+0  0
+
+fn=<built-in method builtins.iter>
+0  0
+
+fn=<built-in method builtins.len>
+0  0
+
+fn=<built-in method builtins.setattr>
+0  0
+cfl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+cfn=__setattr__
+calls=1 106
+0 0
+
+fn=<built-in method __new__ of type object at 0x9d12c0>
+0  0
+
+fn=<built-in method sys.getrecursionlimit>
+0  0
+
+fn=<built-in method sys.intern>
+0  0
+
+fn=<method 'disable' of '_lsprof.Profiler' objects>
+0  0
+
+fl=/usr/lib/python3.6/wsgiref/handlers.py
+fn=_convert_string_type
+240 0
+
+fl=/usr/lib/python3.6/wsgiref/util.py
+fn=__init__
+14 0
+cfn=<built-in method builtins.hasattr>
+calls=1 0
+14 0
+
+fl=/usr/lib/python3.6/wsgiref/headers.py
+fn=__init__
+31 0
+cfl=/usr/lib/python3.6/wsgiref/headers.py
+cfn=_convert_string_type
+calls=8 41
+31 0
+
+fl=/usr/lib/python3.6/wsgiref/util.py
+fn=is_hop_by_hop
+163 0
+cfn=<method '__contains__' of 'dict' objects>
+calls=4 0
+163 0
+cfn=<method 'lower' of 'str' objects>
+calls=4 0
+163 0
+
+fl=/usr/lib/python3.6/wsgiref/headers.py
+fn=_convert_string_type
+41 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+fn=get_path_info
+152 0
+cfn=<method 'decode' of 'bytes' objects>
+calls=2 0
+152 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/utils/encoding.py
+cfn=repercent_broken_unicode
+calls=2 226
+152 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+cfn=get_bytes_from_wsgi
+calls=2 190
+152 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+fn=get_script_name
+159 0
+cfn=<method 'decode' of 'bytes' objects>
+calls=2 0
+159 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+cfn=get_bytes_from_wsgi
+calls=6 190
+159 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+fn=get_bytes_from_wsgi
+190 0
+cfn=<method 'encode' of 'str' objects>
+calls=8 0
+190 0
+cfn=<method 'get' of 'dict' objects>
+calls=8 0
+190 0
+
+fl=/usr/lib/python3.6/wsgiref/handlers.py
+fn=start_response
+212 0
+cfn=<method 'isdigit' of 'str' objects>
+calls=1 0
+212 0
+cfl=/usr/lib/python3.6/wsgiref/util.py
+cfn=is_hop_by_hop
+calls=4 163
+212 0
+cfl=/usr/lib/python3.6/wsgiref/headers.py
+cfn=__init__
+calls=1 31
+212 0
+cfl=/usr/lib/python3.6/wsgiref/handlers.py
+cfn=_convert_string_type
+calls=9 240
+212 0
+cfn=<built-in method builtins.len>
+calls=1 0
+212 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py
+fn=_should_handle
+30 0
+cfn=<method 'startswith' of 'str' objects>
+calls=1 0
+30 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py
+fn=file_path
+38 0
+cfl=/usr/lib/python3.6/urllib/request.py
+cfn=url2pathname
+calls=1 1650
+38 0
+cfn=<built-in method builtins.len>
+calls=1 0
+38 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py
+fn=serve
+45 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/views.py
+cfn=serve
+calls=1 15
+45 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py
+cfn=file_path
+calls=1 38
+45 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py
+fn=get_response
+49 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py
+cfn=serve
+calls=1 45
+49 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py
+fn=__call__
+66 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+cfn=__call__
+calls=1 129
+66 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py
+cfn=_should_handle
+calls=1 30
+66 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+cfn=get_path_info
+calls=1 152
+66 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/views.py
+fn=serve
+15 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=split
+calls=1 104
+15 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/views/static.py
+cfn=serve
+calls=1 19
+15 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/finders.py
+cfn=find
+calls=1 258
+15 0
+cfn=<method 'lstrip' of 'str' objects>
+calls=1 0
+15 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=normpath
+calls=1 338
+15 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/views/static.py
+fn=serve
+19 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/views/static.py
+cfn=was_modified_since
+calls=1 108
+19 0
+cfl=/usr/lib/python3.6/mimetypes.py
+cfn=guess_type
+calls=1 271
+19 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=open
+calls=1 1174
+19 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=__init__
+calls=1 397
+19 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=__setitem__
+calls=1 134
+19 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/utils/http.py
+cfn=http_date
+calls=1 144
+19 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=is_dir
+calls=1 1343
+19 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=exists
+calls=1 1331
+19 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=__str__
+calls=1 691
+19 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=stat
+calls=1 1153
+19 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/utils/_os.py
+cfn=safe_join
+calls=1 9
+19 0
+cfn=<method 'lstrip' of 'str' objects>
+calls=1 0
+19 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=__new__
+calls=1 998
+19 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=normpath
+calls=1 338
+19 0
+cfn=<method 'get' of 'dict' objects>
+calls=1 0
+19 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/views/static.py
+fn=was_modified_since
+108 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+fn=__init__
+17 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+fn=__init__
+65 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/request.py
+cfn=_set_content_type_params
+calls=1 74
+65 0
+cfn=<method 'rstrip' of 'str' objects>
+calls=1 0
+65 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+cfn=__init__
+calls=1 17
+65 0
+cfn=<method 'upper' of 'str' objects>
+calls=1 0
+65 0
+cfn=<method 'replace' of 'str' objects>
+calls=1 0
+65 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+cfn=get_script_name
+calls=1 159
+65 0
+cfn=<method 'get' of 'dict' objects>
+calls=1 0
+65 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+cfn=get_path_info
+calls=1 152
+65 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+fn=<genexpr>
+140 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+fn=__call__
+129 0
+cfl=/usr/lib/python3.6/wsgiref/util.py
+cfn=__init__
+calls=1 14
+129 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=items
+calls=1 151
+129 0
+cfn=<method 'values' of 'dict' objects>
+calls=1 0
+129 0
+cfl=/usr/lib/python3.6/wsgiref/handlers.py
+cfn=start_response
+calls=1 212
+129 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+cfn=<genexpr>
+calls=1 140
+129 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=reason_phrase
+calls=1 63
+129 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py
+cfn=get_response
+calls=1 49
+129 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+cfn=__init__
+calls=1 65
+129 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/core/handlers/wsgi.py
+cfn=get_script_name
+calls=1 159
+129 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/urls/base.py
+cfn=set_script_prefix
+calls=1 99
+129 0
+cfn=<built-in method builtins.getattr>
+calls=1 0
+129 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/dispatch/dispatcher.py
+cfn=send
+calls=1 152
+129 0
+cfn=<method 'get' of 'dict' objects>
+calls=1 0
+129 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/operations.py
+fn=__init__
+55 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/creation.py
+fn=__init__
+20 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/features.py
+fn=__init__
+295 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/introspection.py
+fn=__init__
+14 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/client.py
+fn=__init__
+7 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/base.py
+fn=close_if_unusable_or_obsolete
+503 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/validation.py
+fn=__init__
+3 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/base.py
+fn=__init__
+48 0
+cfn=<built-in method _thread.allocate_lock>
+calls=1 0
+48 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/introspection.py
+cfn=__init__
+calls=1 14
+48 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/validation.py
+cfn=__init__
+calls=1 3
+48 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/client.py
+cfn=__init__
+calls=1 7
+48 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/operations.py
+cfn=__init__
+calls=1 55
+48 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/features.py
+cfn=__init__
+calls=1 295
+48 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/creation.py
+cfn=__init__
+calls=1 20
+48 0
+cfn=<built-in method _thread.get_ident>
+calls=1 0
+48 0
+
+fl=/usr/lib/python3.6/urllib/request.py
+fn=url2pathname
+1650 0
+cfl=/usr/lib/python3.6/urllib/parse.py
+cfn=unquote
+calls=1 620
+1650 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/finders.py
+fn=find
+95 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/finders.py
+cfn=find_location
+calls=1 110
+95 0
+cfn=<method 'append' of 'list' objects>
+calls=1 0
+95 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/finders.py
+fn=find_location
+110 0
+cfl=/usr/lib/python3.6/genericpath.py
+cfn=exists
+calls=1 16
+110 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/utils/_os.py
+cfn=safe_join
+calls=1 9
+110 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/finders.py
+fn=find
+258 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/finders.py
+cfn=get_finders
+calls=2 280
+258 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/finders.py
+cfn=find
+calls=1 95
+258 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/contrib/staticfiles/finders.py
+fn=get_finders
+280 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/asgiref/sync.py
+fn=get_current_task
+321 0
+cfn=<built-in method builtins.hasattr>
+calls=5 0
+321 0
+cfn=<built-in method current_task>
+calls=5 0
+321 0
+
+fn=<built-in method current_task>
+0  0
+cfl=/usr/lib/python3.6/asyncio/events.py
+cfn=get_event_loop
+calls=5 682
+0 0
+
+fl=/usr/lib/python3.6/asyncio/events.py
+fn=get_event_loop
+591 0
+cfl=/usr/lib/python3.6/threading.py
+cfn=name
+calls=5 1076
+591 0
+cfl=/usr/lib/python3.6/threading.py
+cfn=current_thread
+calls=10 1230
+591 0
+cfn=<built-in method builtins.isinstance>
+calls=5 0
+591 0
+
+fl=/usr/lib/python3.6/asyncio/events.py
+fn=_get_running_loop
+638 0
+
+fl=/usr/lib/python3.6/asyncio/events.py
+fn=get_event_loop_policy
+666 0
+
+fl=/usr/lib/python3.6/asyncio/events.py
+fn=get_event_loop
+682 0
+cfl=/usr/lib/python3.6/asyncio/events.py
+cfn=_get_running_loop
+calls=5 638
+682 0
+cfl=/usr/lib/python3.6/asyncio/events.py
+cfn=get_event_loop_policy
+calls=5 666
+682 0
+cfl=/usr/lib/python3.6/asyncio/events.py
+cfn=get_event_loop
+calls=5 591
+682 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/utils/_os.py
+fn=safe_join
+9 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=normcase
+calls=4 52
+9 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=abspath
+calls=4 376
+9 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=join
+calls=2 75
+9 0
+cfn=<method 'startswith' of 'str' objects>
+calls=2 0
+9 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/utils/http.py
+fn=http_date
+144 0
+cfl=/usr/lib/python3.6/email/utils.py
+cfn=formatdate
+calls=1 138
+144 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=_convert_to_charset
+107 0
+cfn=<method 'encode' of 'str' objects>
+calls=8 0
+107 0
+cfn=<built-in method builtins.isinstance>
+calls=32 0
+107 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=__setitem__
+134 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=_convert_to_charset
+calls=8 107
+134 0
+cfn=<method 'lower' of 'str' objects>
+calls=4 0
+134 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=items
+151 0
+cfn=<method 'values' of 'dict' objects>
+calls=1 0
+151 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=get
+154 0
+cfn=<method 'lower' of 'str' objects>
+calls=1 0
+154 0
+cfn=<method 'get' of 'dict' objects>
+calls=1 0
+154 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=__init__
+357 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=__init__
+calls=1 38
+357 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=streaming_content
+calls=1 374
+357 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=streaming_content
+374 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=_set_streaming_content
+calls=1 402
+374 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=_set_streaming_content
+378 0
+cfn=<built-in method builtins.hasattr>
+calls=1 0
+378 0
+cfn=<built-in method builtins.iter>
+calls=1 0
+378 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=__init__
+397 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=__init__
+calls=1 357
+397 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=_set_streaming_content
+402 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=set_headers
+calls=1 414
+402 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=_set_streaming_content
+calls=1 378
+402 0
+cfn=<built-in method builtins.hasattr>
+calls=2 0
+402 0
+cfn=<built-in method builtins.iter>
+calls=1 0
+402 0
+cfn=<method 'append' of 'list' objects>
+calls=1 0
+402 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=set_headers
+414 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=__setitem__
+calls=2 134
+414 0
+cfl=/usr/lib/python3.6/genericpath.py
+cfn=getsize
+calls=1 48
+414 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=get
+calls=1 154
+414 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=basename
+calls=1 144
+414 0
+cfn=<method 'format' of 'str' objects>
+calls=2 0
+414 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=isabs
+calls=1 64
+414 0
+cfn=<method 'encode' of 'str' objects>
+calls=1 0
+414 0
+cfn=<method 'startswith' of 'str' objects>
+calls=1 0
+414 0
+cfn=<built-in method builtins.isinstance>
+calls=1 0
+414 0
+cfn=<built-in method builtins.getattr>
+calls=1 0
+414 0
+
+fl=/usr/lib/python3.6/mimetypes.py
+fn=guess_type
+97 0
+cfl=/usr/lib/python3.6/urllib/parse.py
+cfn=splittype
+calls=1 968
+97 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=splitext
+calls=1 121
+97 0
+
+fl=/usr/lib/python3.6/mimetypes.py
+fn=guess_type
+271 0
+cfl=/usr/lib/python3.6/mimetypes.py
+cfn=guess_type
+calls=1 97
+271 0
+
+fl=/usr/lib/python3.6/email/utils.py
+fn=format_datetime
+167 0
+cfn=<method 'timetuple' of 'datetime.datetime' objects>
+calls=1 0
+167 0
+cfl=/usr/lib/python3.6/email/utils.py
+cfn=_format_timetuple_and_zone
+calls=1 129
+167 0
+
+fl=/usr/lib/python3.6/email/utils.py
+fn=formatdate
+138 0
+cfn=<built-in method fromtimestamp>
+calls=1 0
+138 0
+cfl=/usr/lib/python3.6/email/utils.py
+cfn=format_datetime
+calls=1 167
+138 0
+
+fl=/usr/lib/python3.6/cgi.py
+fn=_parseparam
+301 0
+cfn=<method 'find' of 'str' objects>
+calls=1 0
+301 0
+cfn=<method 'strip' of 'str' objects>
+calls=1 0
+301 0
+cfn=<built-in method builtins.len>
+calls=1 0
+301 0
+
+fl=/usr/lib/python3.6/cgi.py
+fn=parse_header
+313 0
+cfl=/usr/lib/python3.6/cgi.py
+cfn=_parseparam
+calls=2 301
+313 0
+
+fl=/usr/lib/python3.6/email/utils.py
+fn=_format_timetuple_and_zone
+129 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/utils/encoding.py
+fn=repercent_broken_unicode
+226 0
+cfn=<method 'decode' of 'bytes' objects>
+calls=2 0
+226 0
+
+fl=/usr/lib/python3.6/http/cookies.py
+fn=__init__
+506 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/request.py
+fn=_set_content_type_params
+74 0
+cfl=/usr/lib/python3.6/cgi.py
+cfn=parse_header
+calls=1 313
+74 0
+cfn=<method 'get' of 'dict' objects>
+calls=1 0
+74 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=__init__
+38 0
+cfl=/usr/lib/python3.6/http/cookies.py
+cfn=__init__
+calls=1 506
+38 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+cfn=__setitem__
+calls=1 134
+38 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/http/response.py
+fn=reason_phrase
+63 0
+cfn=<method 'get' of 'dict' objects>
+calls=1 0
+63 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/urls/base.py
+fn=set_script_prefix
+99 0
+cfl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+cfn=__setattr__
+calls=1 106
+99 0
+cfn=<method 'endswith' of 'str' objects>
+calls=1 0
+99 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+fn=__iter__
+218 0
+cfn=<built-in method builtins.iter>
+calls=2 0
+218 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+fn=<listcomp>
+222 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+cfn=__getitem__
+calls=2 200
+222 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+fn=all
+221 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+cfn=__iter__
+calls=2 218
+221 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+cfn=<listcomp>
+calls=2 222
+221 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+fn=_get_context_id
+46 0
+cfl=<frozen importlib._bootstrap>
+cfn=parent
+calls=5 416
+46 0
+cfl=<frozen importlib._bootstrap>
+cfn=_handle_fromlist
+calls=5 997
+46 0
+cfl=/home/max/.local/lib/python3.6/site-packages/asgiref/sync.py
+cfn=get_current_task
+calls=5 321
+46 0
+cfl=/usr/lib/python3.6/threading.py
+cfn=current_thread
+calls=5 1230
+46 0
+cfn=<built-in method sys.getrecursionlimit>
+calls=1 0
+46 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+fn=_get_storage
+82 0
+cfl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+cfn=_get_context_id
+calls=5 46
+82 0
+cfn=<built-in method builtins.hasattr>
+calls=5 0
+82 0
+cfn=<method 'append' of 'list' objects>
+calls=2 0
+82 0
+cfn=<built-in method builtins.getattr>
+calls=5 0
+82 0
+cfn=<built-in method builtins.setattr>
+calls=2 0
+82 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+fn=__getattr__
+98 0
+cfl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+cfn=_get_storage
+calls=3 82
+98 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+fn=__setattr__
+106 0
+cfl=/home/max/.local/lib/python3.6/site-packages/asgiref/local.py
+cfn=_get_storage
+calls=2 82
+106 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/dispatch/dispatcher.py
+fn=_make_id
+7 0
+cfn=<built-in method builtins.hasattr>
+calls=1 0
+7 0
+cfn=<built-in method builtins.id>
+calls=1 0
+7 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/dispatch/dispatcher.py
+fn=<listcomp>
+174 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/__init__.py
+cfn=close_old_connections
+calls=1 55
+174 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/__init__.py
+cfn=reset_queries
+calls=1 45
+174 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/dispatch/dispatcher.py
+fn=send
+152 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/dispatch/dispatcher.py
+cfn=<listcomp>
+calls=1 174
+152 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/dispatch/dispatcher.py
+cfn=_live_receivers
+calls=1 223
+152 0
+cfn=<method 'get' of 'dict' objects>
+calls=1 0
+152 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/dispatch/dispatcher.py
+fn=_clear_dead_receivers
+214 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/dispatch/dispatcher.py
+fn=_live_receivers
+223 0
+cfn=<built-in method builtins.isinstance>
+calls=2 0
+223 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/dispatch/dispatcher.py
+cfn=_make_id
+calls=1 7
+223 0
+cfn=<method 'append' of 'list' objects>
+calls=4 0
+223 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/dispatch/dispatcher.py
+cfn=_clear_dead_receivers
+calls=1 214
+223 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/__init__.py
+fn=reset_queries
+45 0
+cfn=<method 'clear' of 'collections.deque' objects>
+calls=1 0
+45 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+cfn=all
+calls=1 221
+45 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/__init__.py
+fn=close_old_connections
+55 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/base.py
+cfn=close_if_unusable_or_obsolete
+calls=1 503
+55 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+cfn=all
+calls=1 221
+55 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+fn=load_backend
+101 0
+cfl=/usr/lib/python3.6/importlib/__init__.py
+cfn=import_module
+calls=1 108
+101 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+fn=ensure_defaults
+166 0
+cfn=<method 'setdefault' of 'dict' objects>
+calls=11 0
+166 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+fn=prepare_test_settings
+187 0
+cfn=<method 'setdefault' of 'dict' objects>
+calls=5 0
+187 0
+
+fl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+fn=__getitem__
+200 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/backends/base/base.py
+cfn=__init__
+calls=1 48
+200 0
+cfn=<built-in method builtins.hasattr>
+calls=2 0
+200 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+cfn=load_backend
+calls=1 101
+200 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+cfn=ensure_defaults
+calls=1 166
+200 0
+cfl=/home/max/.local/lib/python3.6/site-packages/django/db/utils.py
+cfn=prepare_test_settings
+calls=1 187
+200 0
+cfn=<built-in method builtins.getattr>
+calls=1 0
+200 0
+cfn=<built-in method builtins.setattr>
+calls=1 0
+200 0
+
+fl=/usr/lib/python3.6/urllib/parse.py
+fn=unquote
+620 0
+
+fl=/usr/lib/python3.6/urllib/parse.py
+fn=splittype
+968 0
+cfn=<method 'match' of '_sre.SRE_Pattern' objects>
+calls=1 0
+968 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=parse_parts
+51 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=splitroot
+calls=1 282
+51 0
+cfn=<method 'reverse' of 'list' objects>
+calls=1 0
+51 0
+cfn=<built-in method sys.intern>
+calls=6 0
+51 0
+cfn=<method 'split' of 'str' objects>
+calls=1 0
+51 0
+cfn=<method 'append' of 'list' objects>
+calls=7 0
+51 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=splitroot
+282 0
+cfn=<method 'lstrip' of 'str' objects>
+calls=1 0
+282 0
+cfn=<built-in method builtins.len>
+calls=2 0
+282 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=wrapped
+385 0
+cfn=<built-in method posix.open>
+calls=1 0
+385 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=__str__
+calls=4 691
+385 0
+cfn=<built-in method posix.stat>
+calls=3 0
+385 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=_parse_args
+631 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=parse_parts
+calls=1 51
+631 0
+cfn=<built-in method posix.fspath>
+calls=1 0
+631 0
+cfn=<built-in method builtins.isinstance>
+calls=2 0
+631 0
+cfn=<method 'append' of 'list' objects>
+calls=1 0
+631 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=_from_parts
+651 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=_parse_args
+calls=1 631
+651 0
+cfn=<built-in method __new__ of type object at 0x9d12c0>
+calls=1 0
+651 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=_format_parsed_parts
+674 0
+cfn=<method 'join' of 'str' objects>
+calls=1 0
+674 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=__str__
+691 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=_format_parsed_parts
+calls=1 674
+691 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=__new__
+998 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=_init
+calls=1 1008
+998 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=_from_parts
+calls=1 651
+998 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=_init
+1008 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=_opener
+1035 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=wrapped
+calls=1 385
+1035 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=stat
+1153 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=wrapped
+calls=3 385
+1153 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=open
+1174 0
+cfn=<built-in method io.open>
+calls=1 0
+1174 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=__str__
+calls=1 691
+1174 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=exists
+1331 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=stat
+calls=1 1153
+1331 0
+
+fl=/usr/lib/python3.6/pathlib.py
+fn=is_dir
+1343 0
+cfn=<built-in method _stat.S_ISDIR>
+calls=1 0
+1343 0
+cfl=/usr/lib/python3.6/pathlib.py
+cfn=stat
+calls=1 1153
+1343 0
+
+fl=/usr/lib/python3.6/threading.py
+fn=name
+1076 0
+
+fl=/usr/lib/python3.6/threading.py
+fn=current_thread
+1230 0
+cfn=<built-in method _thread.get_ident>
+calls=15 0
+1230 0
+
+fl=/usr/lib/python3.6/posixpath.py
+fn=_get_sep
+41 0
+cfn=<built-in method builtins.isinstance>
+calls=9 0
+41 0
+
+fl=/usr/lib/python3.6/posixpath.py
+fn=normcase
+52 0
+cfn=<built-in method posix.fspath>
+calls=4 0
+52 0
+cfn=<built-in method builtins.isinstance>
+calls=4 0
+52 0
+
+fl=/usr/lib/python3.6/posixpath.py
+fn=isabs
+64 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=_get_sep
+calls=5 41
+64 0
+cfn=<built-in method posix.fspath>
+calls=5 0
+64 0
+cfn=<method 'startswith' of 'str' objects>
+calls=5 0
+64 0
+
+fl=/usr/lib/python3.6/posixpath.py
+fn=join
+75 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=_get_sep
+calls=2 41
+75 0
+cfn=<built-in method posix.fspath>
+calls=2 0
+75 0
+cfn=<method 'endswith' of 'str' objects>
+calls=2 0
+75 0
+cfn=<method 'startswith' of 'str' objects>
+calls=2 0
+75 0
+
+fl=/usr/lib/python3.6/posixpath.py
+fn=split
+104 0
+cfn=<method 'rfind' of 'str' objects>
+calls=1 0
+104 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=_get_sep
+calls=1 41
+104 0
+cfn=<method 'rstrip' of 'str' objects>
+calls=1 0
+104 0
+cfn=<built-in method posix.fspath>
+calls=1 0
+104 0
+cfn=<built-in method builtins.len>
+calls=1 0
+104 0
+
+fl=/usr/lib/python3.6/posixpath.py
+fn=splitext
+121 0
+cfl=/usr/lib/python3.6/genericpath.py
+cfn=_splitext
+calls=1 117
+121 0
+cfn=<built-in method posix.fspath>
+calls=1 0
+121 0
+cfn=<built-in method builtins.isinstance>
+calls=1 0
+121 0
+
+fl=/usr/lib/python3.6/posixpath.py
+fn=basename
+144 0
+cfn=<method 'rfind' of 'str' objects>
+calls=1 0
+144 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=_get_sep
+calls=1 41
+144 0
+cfn=<built-in method posix.fspath>
+calls=1 0
+144 0
+
+fl=/usr/lib/python3.6/posixpath.py
+fn=normpath
+338 0
+cfn=<method 'join' of 'str' objects>
+calls=6 0
+338 0
+cfn=<method 'split' of 'str' objects>
+calls=6 0
+338 0
+cfn=<built-in method posix.fspath>
+calls=6 0
+338 0
+cfn=<method 'startswith' of 'str' objects>
+calls=10 0
+338 0
+cfn=<built-in method builtins.isinstance>
+calls=6 0
+338 0
+cfn=<method 'append' of 'list' objects>
+calls=24 0
+338 0
+
+fl=/usr/lib/python3.6/posixpath.py
+fn=abspath
+376 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=isabs
+calls=4 64
+376 0
+cfl=/usr/lib/python3.6/posixpath.py
+cfn=normpath
+calls=4 338
+376 0
+cfn=<built-in method posix.fspath>
+calls=4 0
+376 0
+
+fl=/usr/lib/python3.6/genericpath.py
+fn=exists
+16 0
+cfn=<built-in method posix.stat>
+calls=1 0
+16 0
+
+fl=/usr/lib/python3.6/genericpath.py
+fn=getsize
+48 0
+cfn=<built-in method posix.stat>
+calls=1 0
+48 0
+
+fl=/usr/lib/python3.6/genericpath.py
+fn=_splitext
+117 0
+cfn=<method 'rfind' of 'str' objects>
+calls=2 0
+117 0
+
+fl=/usr/lib/python3.6/importlib/__init__.py
+fn=import_module
+108 0
+cfn=<method 'startswith' of 'str' objects>
+calls=1 0
+108 0
+cfl=<frozen importlib._bootstrap>
+cfn=_gcd_import
+calls=1 982
+108 0
+
+fl=<frozen importlib._bootstrap>
+fn=parent
+416 0
+cfn=<method 'rpartition' of 'str' objects>
+calls=5 0
+416 0
+
+fl=<frozen importlib._bootstrap>
+fn=_sanity_check
+917 0
+cfn=<built-in method builtins.isinstance>
+calls=1 0
+917 0
+
+fl=<frozen importlib._bootstrap>
+fn=_find_and_load
+966 0
+cfl=<frozen importlib._bootstrap>
+cfn=_lock_unlock_module
+calls=1 194
+966 0
+cfl=<frozen importlib._bootstrap>
+cfn=__exit__
+calls=1 151
+966 0
+cfl=<frozen importlib._bootstrap>
+cfn=cb
+calls=2 176
+966 0
+cfl=<frozen importlib._bootstrap>
+cfn=__enter__
+calls=1 147
+966 0
+cfl=<frozen importlib._bootstrap>
+cfn=__init__
+calls=1 143
+966 0
+cfn=<method 'get' of 'dict' objects>
+calls=1 0
+966 0
+
+fl=<frozen importlib._bootstrap>
+fn=_gcd_import
+982 0
+cfl=<frozen importlib._bootstrap>
+cfn=_sanity_check
+calls=1 917
+982 0
+cfl=<frozen importlib._bootstrap>
+cfn=_find_and_load
+calls=1 966
+982 0
+
+fl=<frozen importlib._bootstrap>
+fn=_handle_fromlist
+997 0
+cfn=<built-in method builtins.hasattr>
+calls=5 0
+997 0
+
+fl=<frozen importlib._bootstrap>
+fn=__init__
+58 0
+cfn=<built-in method _thread.allocate_lock>
+calls=4 0
+58 0
+
+fl=<frozen importlib._bootstrap>
+fn=acquire
+78 0
+cfn=<built-in method _thread.get_ident>
+calls=2 0
+78 0
+
+fl=<frozen importlib._bootstrap>
+fn=release
+103 0
+cfn=<built-in method _thread.get_ident>
+calls=2 0
+103 0
+
+fl=<frozen importlib._bootstrap>
+fn=__init__
+143 0
+
+fl=<frozen importlib._bootstrap>
+fn=__enter__
+147 0
+cfl=<frozen importlib._bootstrap>
+cfn=acquire
+calls=1 78
+147 0
+cfl=<frozen importlib._bootstrap>
+cfn=_get_module_lock
+calls=1 157
+147 0
+
+fl=<frozen importlib._bootstrap>
+fn=__exit__
+151 0
+cfl=<frozen importlib._bootstrap>
+cfn=release
+calls=1 103
+151 0
+
+fl=<frozen importlib._bootstrap>
+fn=cb
+176 0
+cfn=<built-in method _imp.release_lock>
+calls=2 0
+176 0
+cfn=<built-in method _imp.acquire_lock>
+calls=2 0
+176 0
+cfn=<method 'get' of 'dict' objects>
+calls=2 0
+176 0
+
+fl=<frozen importlib._bootstrap>
+fn=_get_module_lock
+157 0
+cfn=<built-in method _imp.release_lock>
+calls=2 0
+157 0
+cfl=<frozen importlib._bootstrap>
+cfn=__init__
+calls=2 58
+157 0
+cfn=<built-in method _imp.acquire_lock>
+calls=2 0
+157 0
+
+fl=<frozen importlib._bootstrap>
+fn=_lock_unlock_module
+194 0
+cfl=<frozen importlib._bootstrap>
+cfn=acquire
+calls=1 78
+194 0
+cfl=<frozen importlib._bootstrap>
+cfn=release
+calls=1 103
+194 0
+cfl=<frozen importlib._bootstrap>
+cfn=_get_module_lock
+calls=1 157
+194 0
+
