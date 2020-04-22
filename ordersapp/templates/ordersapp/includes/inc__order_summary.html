@@ -7,12 +7,16 @@
     <div class="h4">updated: {{ object.updated|date:"Y-m-d H:i:s" }}</div>
     <div class="h4">status: {{ object.get_status_display }}</div>
     <hr>
+    {% with object_summary=object.get_summary%}    
     <div class="h4">
-        total quantity: <span class="order_total_quantity">{{ object.get_total_quantity }}</span>
+        total quantity: <span class="order_total_quantity">
+        {{ object_summary.total_quantity }}</span>
     </div>
     <div class="h3">
-        total price: <span class="order_total_cost">{{ object.get_total_cost|stringformat:"d"|intcomma }}</span> $
+        total price: <span class="order_total_cost">
+        {{ object_summary.total_cost|stringformat:"d"|intcomma }}</span> $
     </div>
+    {% endwith %}
 {% else %}
     <div class="h2">New order</div>
     <hr>

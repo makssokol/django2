@@ -36,6 +36,13 @@ class Order(models.Model):
     def __str__(self):
         return f'Current order: {self.id}'
     
+    def get_summary(self):
+        items = self.orderitems.select_related()
+        return {
+            'total_cost': sum(map(lambda x: x.quantity * x.product.price, items)),
+            'total_quantity': sum(map(lambda x: x.quantity, items))
+        }
+    
     def get_total_quantity(self):
         return sum(map(lambda x: x.quantity, self.orderitems.select_related()))
     

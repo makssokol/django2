@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')v(f=lyr6jz9vhmg2w8s(ppp__w3r+at(fh9xpz2lv_6-6$d7p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '*']
 
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -235,3 +235,17 @@ if DEBUG:
         'debug_toolbar.panels.profiling.ProfilingPanel',
         'template_profiler_panel.panels.template.TemplateProfilerPanel',
     ]
+
+if os.name == 'posix':
+   CACHE_MIDDLEWARE_ALIAS = 'default'
+   CACHE_MIDDLEWARE_SECONDS = 120
+   CACHE_MIDDLEWARE_KEY_PREFIX = 'artshop'
+
+   CACHES = {
+       'default': {
+           'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+           'LOCATION': '127.0.0.1:11211',
+       }
+   }
+
+LOW_CACHE = True
