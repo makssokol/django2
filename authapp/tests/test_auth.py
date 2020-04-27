@@ -81,7 +81,7 @@ class TestUserManagement(TestCase):
         self.assertEqual(response.context['title'], 'registration')
         self.assertTrue(response.context['user'].is_anonymous)
 
-        new_user_data = {
+        new_user_data = { 
             'username': 'samuel',
             'first_name': 'Сэмюэл',
             'last_name': 'Джексон',
