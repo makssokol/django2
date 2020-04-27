@@ -601,6 +601,7 @@ html, body {
 
 .users_list {
     margin-left: 150px;
+    margin-top: 100px;
 }
 
 .users_list a {

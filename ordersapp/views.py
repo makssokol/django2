@@ -148,9 +148,11 @@ def order_forming_complete(request, pk):
 @receiver(pre_save, sender=Basket)
 def product_quantity_updated_save(sender, update_fields, instance, **kwargs):
     if instance.pk:
+        print(f'instance: {instance}')
         instance.product.quantity -= instance.quantity - \
             sender.get_item(instance.pk).quantity
     else:
+        print(f'instance: {instance}')
         instance.product.quantity -= instance.quantity
     instance.product.save()
 

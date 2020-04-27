@@ -18,17 +18,17 @@
         <p>{% if object.is_active %}yes{% else %}no{% endif %}</p>
         <p>
             <button>
-                <a href={% url 'myadmin:product_update' object.pk %}>edit</a>
+                <a href="{% url 'myadmin:product_update' object.pk %}">edit</a>
             </button>
         </p>
         <p>
             <button>
-                <a href={% url 'myadmin:product_delete' object.pk %}>delete</a>
+                <a href="{% url 'myadmin:product_delete' object.pk %}">delete</a>
             </button>
         </p>
         <p>
             <button>
-                <a href={% url 'myadmin:products' object.category.pk %}>back</a>
+                <a href="{% url 'myadmin:products' object.category.pk %}">back</a>
             </button>
         </p>
     </div>

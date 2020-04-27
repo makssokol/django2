@@ -6,17 +6,21 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.db import connection
+from django.dispatch import receiver
+from django.db.models.signals import pre_save
 
 from adminapp.forms import ArtShopUserAdminEditForm, ArtCategoryEditForm, ArtObjectEditForm
 from authapp.forms import ArtShopUserRegisterForm
 from authapp.models import ArtShopUser
 from mainapp.models import ArtObject, ArtCategory
+from django.db.models import F
 
 # Create your views here.
 
 @user_passes_test(lambda u: u.is_superuser)
 def admin_main(request):
-    response = redirect("admin:users")
+    response = redirect("myadmin:users")
     return response
 
 class UsersListView(LoginRequiredMixin, ListView):
@@ -26,19 +30,19 @@ class UsersListView(LoginRequiredMixin, ListView):
 class ArtShopUserCreateView(LoginRequiredMixin, CreateView):
     model = ArtShopUser
     template_name = "adminapp/user_update.html"
-    success_url = reverse_lazy("admin:users")
+    success_url = reverse_lazy("myadmin:users")
     fields = "__all__"
 
 class ArtShopUserUpdateView(LoginRequiredMixin, UpdateView):
     model = ArtShopUser
     template_name = "adminapp/user_update.html"
-    success_url = reverse_lazy("admin:users")
+    success_url = reverse_lazy("myadmin:users")
     fields = "__all__"
 
 class ArtShopUserDeleteView(LoginRequiredMixin, DeleteView):
     model = ArtCategory
     template_name = "adminapp/user_delete.html"
-    success_url = reverse_lazy("admin:users")
+    success_url = reverse_lazy("myadmin:users")
 
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -47,39 +51,46 @@ class ArtShopUserDeleteView(LoginRequiredMixin, DeleteView):
         return HttpResponseRedirect(self.get_success_url())
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda x: x.is_superuser)
 def categories(request):
-    title = "adminsite/categories"
-    categories_list = ArtCategory.objects.all()
-    content = {
-        "title": title,
-        "objects": categories_list,
-        "media_url": settings.MEDIA_URL,
+    object_list = ArtCategory.objects.all().order_by('-is_active', 'name')
+    context = {
+        'title': 'adminsite/categories',
+        'object_list': object_list
     }
-    return render(request, "adminapp/categories.html", content)
+    return render(request, 'adminapp/artcategory_list.html', context)
 
 class ArtCategoryCreateView(LoginRequiredMixin, CreateView):
     model = ArtCategory
     template_name = "adminapp/category_update.html"
-    success_url = reverse_lazy("admin:categories")
+    success_url = reverse_lazy("myadmin:categories")
     fields = "__all__"
 
 class ArtCategoryUpdateView(LoginRequiredMixin, UpdateView):
     model = ArtCategory
     template_name = "adminapp/category_update.html"
-    success_url = reverse_lazy("admin:categories")
-    fields = "__all__"
+    success_url = reverse_lazy("myadmin:categories")
+    form_class = ArtCategoryEditForm
 
     def get_context_data(self, **kwargs):
-        context = super(ArtCategoryUpdateView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context["title"] = "categories/edit"
         return context
+    
+    def form_valid(self, form):
+        if 'discount' in form.cleaned_data:
+            discount = form.cleaned_data['discount']
+            if discount:
+                self.object.artobject_set.update(
+                    price=F('price') * (1 - discount / 100)
+                )
+                # db_profile_by_type(self.__class__, 'UPDATE', connection.queries)
+        return super().form_valid(form)
         
 
 class ArtCategoryDeleteView(LoginRequiredMixin, DeleteView):
     model = ArtCategory
-    template_name = "adminapp/category_delete.html"
-    success_url = reverse_lazy("admin:categories")
+    success_url = reverse_lazy("myadmin:categories")
 
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -110,7 +121,7 @@ def product_create(request, pk):
         product_form = ArtObjectEditForm(request.POST, request.FILES)
         if product_form.is_valid():
             product_form.save()
-            return HttpResponseRedirect(reverse("admin:products", args=[pk]))
+            return HttpResponseRedirect(reverse("myadmin:products", args=[pk]))
     else:
         product_form = ArtObjectEditForm(initial={"category": category})
 
@@ -131,7 +142,7 @@ def product_update(request, pk):
         edit_form = ArtObjectEditForm(request.POST, request.FILES, instance=edit_product)
         if edit_form.is_valid():
             edit_form.save()
-            return HttpResponseRedirect(reverse("admin:product_update", args=[edit_product.pk]))
+            return HttpResponseRedirect(reverse("myadmin:product_update", args=[edit_product.pk]))
     else:
         edit_form = ArtObjectEditForm(instance=edit_product)
 
@@ -146,17 +157,33 @@ def product_update(request, pk):
 
 class ArtObjectDetailView(LoginRequiredMixin, DetailView):
     model = ArtObject
-    template_name = "adminapp/product_read.html"
+    template_name = "adminapp/artobject_detail.html"
 
 
 
 class ArtObjectDeleteView(LoginRequiredMixin, DeleteView):
     model = ArtObject
     template_name = "adminapp/product_delete.html"
-    success_url = reverse_lazy("admin:products")
+    success_url = reverse_lazy("myadmin:products")
 
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
         self.object.is_active = False
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
+
+
+def db_profile_by_type(prefix, type, queries):
+    update_queries = list(filter(lambda x : type in x['sql'], queries))
+    print(f'db_profile {type} for {prefix}:')
+    [print(query['sql']) for query in update_queries]
+
+@receiver(pre_save, sender=ArtCategory)
+def product_is_active_update_artcategory_save(sender, instance, **kwargs):
+    if instance.pk:
+        if instance.is_active:
+            instance.artobject_set.update(is_active=True)
+        else:
+            instance.artobject_set.update(is_active=False)
+        
+        # db_profile_by_type(sender, 'UPDATE', connection.queries)

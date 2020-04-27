@@ -6,6 +6,7 @@ from django.conf import settings
 from django.urls import reverse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
+from django.db.models import F
 
 
 @login_required
@@ -27,16 +28,19 @@ def basket_add(request, pk):
         return HttpResponseRedirect(reverse("products:product", args=[pk]))
     product = get_object_or_404(ArtObject, pk=pk)
     basket = Basket.objects.filter(user=request.user, product=product).first()
-    # print(f"Product quantity: {product.quantity}")
+    if basket:
+        basket.quantity = F('quantity') + 1
+    print(f"Product quantity: {product.quantity}")
+    print(f"Basket initial: {basket}")
 
     if not basket:
-        basket = Basket(user=request.user, product=product)
-
-    if product.quantity > 0:
-        basket.quantity += 1
-        basket.save()
-    else:
-        raise Exception(f"{product.name} is out of stock")
+        print(f'request: {request}, request.user: {request.user}, product: {product}, product.price: {product.price}')
+        basket = Basket(user=request.user, product=product, quantity=1)
+    print(f"Basket created: {basket}. Basket quantity: {basket.quantity}.")
+    print(f"Basket product: {basket.product}.")
+    
+    basket.save()
+    
 
     return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
 

@@ -4,23 +4,23 @@
 {% block content %}
 <div class="categories_list">
     <button class="new_category">
-        <a href={% url 'myadmin:category_create' %}>New category</a>
+        <a href="{% url 'myadmin:category_create' %}">New category</a>
     </button>
 
-    {% for object in objects %}
+    {% for object in object_list %}
     <div class="category_record {% if not object.is_active %}not_active{% endif %}">
         <div class="category_name">
             {{ object.name|title }}
         </div>
         <div class="category_actions">
             <button>
-                <a href={% url 'myadmin:products' object.pk %}>ArtObjects of the category</a>
+                <a href="{% url 'myadmin:products' object.pk %}">ArtObjects of the category</a>
             </button>
             <button>
-                <a href={% url 'myadmin:category_update' object.pk %}>Edit</a>
+                <a href="{% url 'myadmin:category_update' object.pk %}">Edit</a>
             </button>
             <button>
-                <a href={% url 'myadmin:category_delete' object.pk %}>Delete</a>
+                <a href="{% url 'myadmin:artcategory_delete' object.pk %}">Delete</a>
             </button>
         </div>
         <div class="category_desc">

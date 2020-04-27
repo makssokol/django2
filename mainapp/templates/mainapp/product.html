@@ -14,6 +14,7 @@
           <p>Category: {{ product.category.name }}</p>
           <p>Price: {{ product.price|stringformat:"d"|intcomma }} $</p>
           <p>Description: {{ product.description }}</p>
+          <p>Quantity: {{ product.quantity }}</p>
           <a href="{% url 'basket:add' product.pk %}">
             <button class="button-basket">
               Add to basket
